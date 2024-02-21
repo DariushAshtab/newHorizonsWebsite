@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Supermercado+One&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'B Mitra',sans-serif;
+    direction: rtl;
+}
+h1, h2{
+    font-family: 'B Titr',sans-serif;
+    margin-bottom: 1rem;
+}
+p{
+    text-align: justify;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-indent: 3.125rem;
+}
+img{
+    display: block;
+    width: 50%;
+    height: auto;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: lightgray;
+    margin: 20px auto;
+    transition: 0.3s;
+}
+img:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+.site > *{
+    /* border: 1px solid black; */
+    padding: 20px;
+}
+.site{
+    display: grid;
+    grid-template-columns: 200px auto;
+    grid-template-rows: 100vh auto auto;
+
+    grid-template-areas: 'header header' 'nav main' 'footer footer';
+}
+@media screen and (max-width:900px) {
+    .site{
+        grid-template-columns: auto;
+        grid-template-rows: 100vh repeat(3, auto);
+        grid-template-areas: 'header' 'main' 'nav' 'footer';
+    }
+    img{
+        width: 75%;
+    }
+}
+@media screen and (max-height:500px) {
+    html{
+        font-size: 12px;
+    }
+    .site{
+        grid-template-rows: 500px auto;
+    } 
+    img{
+        width: 100%;
+    } 
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: header;
+    background-image: linear-gradient(to right, rgba(0,0,0,.4), rgba(0,0,0,.4)),url('images/banner.jpg');
+    font-family: "El Messiri", sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 40px;
+    background-attachment: fixed;
+    position: relative;
+    background-color: rgba(0,0, 0,.4);
+}
+/* .header::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: url('images/banner.jpg') no-repeat fixed;
+    background-size: cover;
+    z-index: -1;
+} */
+
+.logo{
+    font-size: 3rem;
+    font-weight: bold;
+    color: rgb(24, 179, 255);
+    text-shadow: 0 0 3px black;
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    width: 50%;
+}
+.menu li{
+    width: 25%;
+    margin: 10px;
+    box-shadow: 0 0 2px black;
+    background-color: rgba(0, 0, 0,.2);
+}
+.menu a{
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.25rem;
+    color: white;
+    border: 1px solid gray;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.menu a:hover{
+    background-color: rgba(48, 255, 5, .7);
+}
+.login a{
+    display: block;
+    padding: 12px 15px;
+    background-color: rgb(24, 179, 255);
+    font-family: "Supermercado One", sans-serif;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    transition: 0.3s;
+}
+.login a:hover{
+    background-color: rgba(255, 145, 0, 0.8);
+}
+@media screen and (max-width:900px) {
+    .header{
+        flex-direction: column;
+    }
+    .menu{
+        width: 100%;
+    }
+}
+@media screen and (max-width:700px){
+    .menu{
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu li{
+       min-width: 150px;
+    }
+}
+.main{
+    grid-area: main;
+    background-color: rgb(230, 230, 230);
+    padding: 2rem;
+}
+.nav{
+    grid-area: nav;
+    background-color: white;
+    padding: 25px 0;
+}
+.nav ul{
+    list-style-type: none;
+}
+.nav a{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    margin-bottom: 5px;
+    color: gray;
+    font-size: 1.25rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.nav a:hover{
+    background-color: rgb(240, 240, 240);
+}
+.nav i{
+    margin-left: 20px;
+}
+.footer{
+    grid-area: footer;
+    background-color: rgb(27, 27, 27);
+    padding: 150px 0;
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+    font-family: "El Messiri", sans-serif;
+}
+.footer .social{
+    color: red;
+
+}
+.footer i{
+    margin-left: 15px;
+    transition: 0.3s;
+}
+.footer i:hover{
+    transform: scale(1.1);
+}
+@media screen and (max-width:400px) {
+    .footer i{
+        margin-left: 5px;
+    }
+    
+}
